@@ -1,16 +1,11 @@
 import React, {FC} from 'react';
-import { Link } from 'react-router-dom';
+import DefaultLayout from '../../containers/defaultLayout/defaultLayout';
 import styles from './main.module.scss';
 
 const MainPage: FC = () => {
-    return (
-        <>
-            <Link to='/login'>login</Link>
-            <Link to='/signup'>signup</Link>
-            <Link to='/profile'>profile</Link>
+    return <DefaultLayout >
             <main className={styles.test}>main</main>
-        </>
-    )
+        </DefaultLayout>
 };
 
 export default MainPage;

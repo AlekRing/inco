@@ -1,6 +1,6 @@
 # 🚀 Welcome to inco!
 
-Deployed project: https://inco-wine.vercel.app/[https://inco-wine.vercel.app/]
+Deployed project: https://inco-wine.vercel.app/
 
 To start:
 ```
