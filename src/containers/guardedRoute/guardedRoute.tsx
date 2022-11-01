@@ -4,12 +4,12 @@ import { Route, Navigate } from "react-router-dom";
 interface GuardedRouteProps {
     component: Component;
     auth: boolean;
-    props: 
-}
+    props: any;
+};
 
-const GuardedRoute: FC<GuardedRouteProps> = ({ component, auth, ...rest, props }) => {
+const GuardedRoute: FC<GuardedRouteProps> = ({ component, auth, props, ...rest }) => {
 
-    if (!auth) return <Navigate to='/' />;
+    if (!auth) return <Navigate to='/' />; // rework
 
     return <Route {...rest} element={<Component {...props} />} />
 };

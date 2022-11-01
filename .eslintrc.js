@@ -5,9 +5,9 @@ const eslintConfig = {
     'eslint-config-airbnb-base',
   ],
   parser: '@babel/eslint-parser',
-  rules: {
-    properties: 1,
-  },
+  // rules: {
+  //   properties: 1,
+  // },
   settings: {
     'import/resolver': {
       alias: true,
