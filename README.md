@@ -1,15 +1,18 @@
 # 🚀 Welcome to inco!
 
-You can now run
+Deployed project: https://inco-wine.vercel.app/[https://inco-wine.vercel.app/]
 
+To start:
 ```
-npm run build
-```
-
-or
-
-```
-yarn build
+npm install -ci
 ```
 
-to bundle your application
+You can now run:
+```
+npm start
+```
+
+to serve application
+
+
+### Inco.
