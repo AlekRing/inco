@@ -1,5 +1,5 @@
 import React, {FormEvent} from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ButtonBase from "../../components/button/buttonBase";
 import InputBase from "../../components/input/inputBase";
 
@@ -55,12 +55,13 @@ const SignUp = () => {
                             <label htmlFor={key} key={key}>
                                 {key}
                                 <InputBase key={key} name={key} {...value} />
-                            </label><br />
+                            </label>
                         </>
                     ))
                 }
                 <ButtonBase text="Submit" type="submit" />
             </form>
+            <Link to='/login'>Login</Link>
         </>
     )
 };

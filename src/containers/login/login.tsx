@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ButtonBase from "../../components/button/buttonBase";
 import InputBase from "../../components/input/inputBase";
 
@@ -34,7 +34,13 @@ const Login = () => {
 
         console.log(inputValues);
 
-        navigate('/');
+        if (inputValues['username'].value === '1' && inputValues['password'].value === '1') {
+            navigate('/');
+            localStorage.setItem('isLogin', 'true');
+        } else {
+            console.log('test failed login');
+            
+        }
     };
 
     return (
@@ -45,16 +51,15 @@ const Login = () => {
             <form action="submit" onSubmit={e => handleSubmit(e, Object.keys(fields))}>
                 {
                     Object.entries(fields).map(([key, value]) => (
-                        <>
-                            <label htmlFor={key} key={key}>
-                                {key}
-                                <InputBase name={key} {...value} />
-                            </label><br />
-                        </>
+                        <label htmlFor={key} key={key}>
+                            {key}
+                            <InputBase key={key} name={key} {...value} />
+                        </label>
                     ))
                 }
                 <ButtonBase text="Submit" type="submit" />
             </form>
+            <Link to='/signup'>Sign up</Link>
         </>
     )
 };
