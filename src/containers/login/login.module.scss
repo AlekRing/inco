@@ -15,6 +15,7 @@
 }
 
 .title {
+    margin-bottom: 12px;
     font-family: $main-font-semi-bold;
 }
 
@@ -22,7 +23,21 @@
     display: flex;
     flex-direction: column;
 
+    &:first-of-type {
+        margin-top: 40px;
+    }
+
+    &:last-of-type {
+        margin-bottom: 56px;
+    }
+
     & span {
         margin-bottom: 4px;
+        color: $main-gray;
+
+        &:last-of-type {
+            margin-top: 16px;
+            margin-bottom: 0;
+        }
     }
 }

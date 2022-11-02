@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import ButtonBase from "../../components/button/buttonBase";
 import InputBase from "../../components/input/inputBase";
 import SignUpLogin from "../signUpLogin/signUpLogin";
+import styles from './signUp.module.scss';
 
 interface fieldsInterface {
     [string: string]: {
@@ -45,10 +46,7 @@ const SignUp = () => {
     };
 
     return (
-        <SignUpLogin>
-            <div>
-                Please fill the form below
-            </div>
+        <SignUpLogin isLogin={false}>
             <form action="submit" onSubmit={e => handleSubmit(e, Object.keys(fields))}>
                 {
                     Object.entries(fields).map(([key, value]) => (
@@ -62,7 +60,6 @@ const SignUp = () => {
                 }
                 <ButtonBase text="Submit" type="submit" />
             </form>
-            <Link to='/login'>Login</Link>
         </SignUpLogin>
     )
 };

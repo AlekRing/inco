@@ -3,6 +3,8 @@
 interface CssExports {
   'blueBoxContainer': string;
   'container': string;
+  'formContainer': string;
+  'formTitle': string;
   'ideas': string;
   'img': string;
   'subtitle': string;

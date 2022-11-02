@@ -1,0 +1,17 @@
+@import '../../assets/scss/variables.scss';
+
+.btn {
+    padding: 12px 32px;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: $main-font-semi-bold;
+    color: $white;
+    background-color: $main-blue;
+    box-shadow: 0px 10px 16px rgba(21, 105, 181, 0.27);
+    border: none;
+    border-radius: 8px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}

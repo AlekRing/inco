@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import styles from './button.module.scss';
 
 interface InputBaseInterface {
     text?: string;
@@ -14,7 +15,7 @@ const ButtonBase: FC<InputBaseInterface> = ({type = 'button', text, handler, chi
     };
 
     return (
-        <button type={type} onClick={handleClick}>
+        <button type={type} onClick={handleClick} className={styles.btn}>
             {text}
             {children}
         </button>

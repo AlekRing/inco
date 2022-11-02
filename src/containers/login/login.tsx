@@ -49,22 +49,21 @@ const Login = () => {
     };
 
     return (
-        <SignUpLogin>
-            <div className={styles.container}>
-                <h2 className={styles.title}>Вход</h2>
-                <p>Нет аккаунта? <Link to='/signup'>Зарегистрироваться</Link></p>
-                <form action="submit" onSubmit={e => handleSubmit(e, Object.keys(fields))} className={styles.form}>
-                    {
-                        Object.entries(fields).map(([key, value]) => (
-                            <label htmlFor={key} key={key} className={styles.inputLabel}>
-                                <span>{value.label}</span>
-                                <InputBase key={key} name={key} {...value} />
-                            </label>
-                        ))
-                    }
-                    <ButtonBase text="Submit" type="submit" />
-                </form>
-            </div>
+        <SignUpLogin isLogin>
+            <form action="submit" onSubmit={e => handleSubmit(e, Object.keys(fields))} className={styles.form}>
+                {
+                    Object.entries(fields).map(([key, value]) => (
+                        <label htmlFor={key} key={key} className={styles.inputLabel}>
+                            <span>{value.label}</span>
+                            <InputBase key={key} name={key} {...value} />
+                        </label>
+                    ))
+                }
+                <div>
+                    <ButtonBase text="Войти" type="submit" />
+                    <span>Войти через ГосУслуги</span>
+                </div>
+            </form>
         </SignUpLogin>
     )
 };
