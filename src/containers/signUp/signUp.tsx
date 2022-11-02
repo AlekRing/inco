@@ -2,6 +2,7 @@ import React, {FormEvent} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ButtonBase from "../../components/button/buttonBase";
 import InputBase from "../../components/input/inputBase";
+import SignUpLogin from "../signUpLogin/signUpLogin";
 
 interface fieldsInterface {
     [string: string]: {
@@ -44,7 +45,7 @@ const SignUp = () => {
     };
 
     return (
-        <>
+        <SignUpLogin>
             <div>
                 Please fill the form below
             </div>
@@ -62,7 +63,7 @@ const SignUp = () => {
                 <ButtonBase text="Submit" type="submit" />
             </form>
             <Link to='/login'>Login</Link>
-        </>
+        </SignUpLogin>
     )
 };
 

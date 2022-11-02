@@ -1,4 +1,12 @@
+@import 'src/assets/scss/fonts.scss';
+@import 'src/assets/scss/variables.scss';
+
 body {
+    margin: 0;
+    font-family: $main-font;
+}
+
+h1, h2, h3, h4, h5, h6, p {
     margin: 0;
 }
 

@@ -40,6 +40,43 @@ const config = {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
         type: "asset",
       },
+      // {
+      //   test: /\.(png|jpg|gif)$/i,
+      //   use: [
+      //     {
+      //       loader: 'url-loader',
+      //       options: {
+      //         limit: 8192,
+      //       },
+      //     },
+      //   ],
+      // },
+      {
+        test: /\.(jpg|gif|png|svg)$/,
+        use: [
+            {
+                loader: 'file-loader',
+                options: {
+                    name: '[path][name].[ext]?[hash]',
+                    // outputPath: '/img/',
+                    // hashType: 'md5',
+                }
+            }
+        ]
+      },
+      // {
+      //   test: /\.(woff(2)?|ttf|otf|eot)$/,
+      //   use: [
+      //       {
+      //           loader: 'file-loader',
+      //           options: {
+      //               name: '[name].[ext]?[hash]',
+      //               outputPath: '/fonts/',
+      //               hashType: 'md5',
+      //           }
+      //       }
+      //   ]
+      // },
     ],
   },
   resolve: {

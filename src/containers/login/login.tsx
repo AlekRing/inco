@@ -2,9 +2,12 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ButtonBase from "../../components/button/buttonBase";
 import InputBase from "../../components/input/inputBase";
+import SignUpLogin from "../signUpLogin/signUpLogin";
+import styles from './login.module.scss';
 
 interface fieldsInterface {
     [string: string]: {
+        label: string;
         placeholder: string;
         type?: 'number' | 'password' | 'text';
     }
@@ -12,9 +15,11 @@ interface fieldsInterface {
 
 const fields: fieldsInterface = {
     username: {
+        label: 'Почта',
         placeholder: 'user name',
     },
     password: {
+        label: 'Пароль',
         placeholder: 'password',
         type: 'password',
     },
@@ -44,23 +49,23 @@ const Login = () => {
     };
 
     return (
-        <>
-            <div>
-                Hello
+        <SignUpLogin>
+            <div className={styles.container}>
+                <h2 className={styles.title}>Вход</h2>
+                <p>Нет аккаунта? <Link to='/signup'>Зарегистрироваться</Link></p>
+                <form action="submit" onSubmit={e => handleSubmit(e, Object.keys(fields))} className={styles.form}>
+                    {
+                        Object.entries(fields).map(([key, value]) => (
+                            <label htmlFor={key} key={key} className={styles.inputLabel}>
+                                <span>{value.label}</span>
+                                <InputBase key={key} name={key} {...value} />
+                            </label>
+                        ))
+                    }
+                    <ButtonBase text="Submit" type="submit" />
+                </form>
             </div>
-            <form action="submit" onSubmit={e => handleSubmit(e, Object.keys(fields))}>
-                {
-                    Object.entries(fields).map(([key, value]) => (
-                        <label htmlFor={key} key={key}>
-                            {key}
-                            <InputBase key={key} name={key} {...value} />
-                        </label>
-                    ))
-                }
-                <ButtonBase text="Submit" type="submit" />
-            </form>
-            <Link to='/signup'>Sign up</Link>
-        </>
+        </SignUpLogin>
     )
 };
 

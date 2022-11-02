@@ -1,0 +1,34 @@
+@import '../../assets/scss/variables.scss';
+
+.container {
+    width: calc(100vw - 96px);
+    height: calc(100vh - 64px);
+    padding: 32px 48px;
+    display: flex;
+}
+
+.blueBoxContainer {
+    max-width: 432px;
+    padding: 36px 32px;
+    margin-right: 64px;
+    background: $main-blue;
+    border-radius: 16px;
+    color: $white;
+}
+
+.ideas,
+.subtitle {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.title {
+    margin: 71px 0 12px;
+    font-size: 32px;
+    line-height: 32px;
+    font-family: $main-font-semi-bold;
+}
+
+.img {
+    display: block;
+}
